@@ -253,14 +253,20 @@ async def performers_loop():
 
 
 # ── Entry point ─────────────────────────────────────────────────────────────
-
 async def main():
     print(f"[{datetime.now()}] Bot starting — performers every {PERFORMERS_INTERVAL}s, CA scan active", flush=True)
-
-    # Your existing setup
+    
     dp = Dispatcher()
     dp.include_router(router)
     asyncio.create_task(performers_loop())
+    
+    print("🚀 Bot is now running 24/7 with polling!")
+    await dp.start_polling(bot, allowed_updates=["message"])
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+
 
     # === WEBHOOK SETUP FOR RENDER (free 24/7) ===
     app = web.Application()
