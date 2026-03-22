@@ -287,7 +287,7 @@ async def main():
 
     # Tell Telegram to send messages to Render
     await bot.set_webhook(
-        url=f"https://{os.getenv('RENDER_EXTERNAL_HOSTNAME')}{webhook_path}",
+        url=f"https://{os.getenv('RAILWAY_PUBLIC_DOMAIN')}{webhook_path}"
         allowed_updates=["message"]
     )
     print(f"✅ Webhook set: https://{os.getenv('RENDER_EXTERNAL_HOSTNAME')}{webhook_path}")
