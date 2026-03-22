@@ -292,8 +292,7 @@ async def main():
         allowed_updates=["message"]
     )
     print(f"✅ Webhook set: https://{os.getenv('RAILWAY_PUBLIC_DOMAIN')}{webhook_path}")
-    )
-    print(f"✅ Webhook set: https://{os.getenv('RENDER_EXTERNAL_HOSTNAME')}{webhook_path}")
+    jd
 
     await site.start()
     print("🚀 Bot is now running 24/7 on Render!")
